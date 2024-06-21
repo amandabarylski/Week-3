@@ -1,14 +1,111 @@
+<!--Instructions: Create a new website using HTML and Bootstrap. 
+    The website must include the following:
+        At least 2 pages.
+        A Bootstrap navbar, table, and form.
+        Bootstrap grid used throughout to format elements
+        Elements should stack vertically when the window is small-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
-<body>
-    
+<!--When only using Bootstrap and not a separate CSS file, I had to add a class to the body to give the page
+a background color.-->
+<body class="bg-dark">
+    <!--I began by choosing a navbar from the Bootstrap documentation to copy and paste at the top. I then changed
+    the navbar settings to fit the look I wanted for the page. I also set ml-auto to place the navbar links to the
+    right of the page and linked and labeled my pages. I chose to make three pages instead of two, as this first one
+    will be a landing page with the table and form on the other two.-->
+    <nav class="navbar navbar-expand-md navbar-light bg-info">
+        <a class="navbar-brand" href="index.html">International Restoration Society</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" 
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="progress.html">Progress</a>
+            <a class="nav-item nav-link" href="donate.html">Donate</a>
+          </div>
+        </div>
+      </nav>
 
+    <!--I added margins as well as padding for medium and up screens to push the content of the main page more to
+    the center and keep it looking neater. Keeping the padding only on medium and up screens allows for the small
+    view to not be constricted while still providing more empty space on larger screens.-->
+    <main class="mx-3 mt-3 px-md-5 bg-secondary">
+        <!--I used classes to center the header and give it a border. The padding keeps the border from overlapping
+        with the y in Society.-->
+      <h1 class="text-center pb-2 border-bottom border-dark">Welcome to the International Restoration Society!</h1>
+      
+      <!--I used class="row" to place both small sections on one line when the page is wide enough. I styled them
+      with borders and background colors to offer some visual diversity.-->
+      <div class="row">
+        <!--While the row is a div, I used section, header, paragraph, and list tags for the rest of the content.-->
+        <section class="col-lg border rounded-lg border-dark">
+          <!--For these sections, I gave the headers a separate background color to make them pop. Unlike the top header,
+          I didn't feel that these ones needed padding.-->
+          <h2 class="text-center bg-info border-bottom border-dark">Who We Are</h2>
+          <p class="text-left">We are a non-profit organization dedicated to the restoration and preservation of historic sites throughout
+            the continent of Terraris. Though our main office is in Faren, we have members from many nationalities and 
+            have opened small branches in several cities. All revenue generated from donations and our campaigns goes
+            to our projects and those working hard to complete them.
+          </p>
+        </section>
+        <!--I changed colors for the second section so that they will be even more distinct when stacked. Due to the way
+        that the cards below also alternate, it makes the full-sized page half of each color scheme.-->
+        <section class="col-lg bg-info border rounded-lg border-info">
+          <h2 class="text-center bg-secondary border-bottom border-dark">What We Do</h2>
+          <ul>
+            <li>Restore and translate historical documents</li>
+            <li>Restore ancient artwork according to records</li>
+            <li>Repair and renovate historic buildings</li>
+            <li>Restore and return historic items to their place of origin</li>
+            <li>Work with university and government teams to discover and excavate sites of interest</li>
+          </ul>
+        </section>
+      </div>
+
+      <!--Another row. This time, I copied and pasted an example of a card from the Booststrap documentation. I added
+      the images and alt text, as well as setting them to columns and changing their background and button colors and
+      centering the text.-->
+      <div class="row">
+        <!--The cards themselves are another div class, as I was unsure of what semantic tag would be appropriate.-->
+        <div class="card col-lg bg-secondary">
+          <img src="Images/Terraris- current borders.jpg" class="card-img-top" alt="A current map of the continent of
+          Terraris, with the borders of the countries marked.">
+          <!--After the image, I changed the area with the text and button into a section instead of a div.-->
+          <section class="card-body text-center">
+            <!--The example in the documentation already used both h5 and p tags, so I didn't have to change these.-->
+            <h5 class="card-title">Our Current Projects</h5>
+            <p class="card-text">Check out the ongoing progress on our current projects!</p>
+            <a href="progress.html" class="btn btn-info">Progress</a>
+          </section>
+        </div>
+        <!--I copied and pasted the first card, changing the details as well as altering the colors.-->
+        <div class="card col-lg bg-info">
+          <img src="Images/Arellea space view.jpg" class="card-img-top" alt="A view of Arellea from space with the
+          nebulae visible in the background and the moon to the right.">
+          <section class="card-body text-center">
+            <h5 class="card-title">Support Us</h5>
+            <p class="card-text">We can't do this without your help!</p>
+            <a href="donate.html" class="btn btn-secondary">Donate</a>
+          </section>
+        </div>
+      </div>
+
+      <!--For the footer, I used a dark background with light text color. I set the side margins to negative 3, so
+      that the footer extends to the edges of the content within the main page.-->
+      <footer class="text-center bg-dark text-light mx-n3">We are a not-for-profit organization, and this content is 
+        created and maintained under a Creative Commons license.</footer>
+    </main>
+
+    <!--Before starting, I linked the suggested scripts on each page.-->
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
