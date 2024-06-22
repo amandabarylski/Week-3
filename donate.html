@@ -25,7 +25,98 @@
       </nav>
 
     <main class="mx-3 mt-3 px-md-5 bg-secondary">
-        <h2 class="text-center pb-2 border-bottom border-dark">Donate Today!</h2>
+      <!--I opted for a smaller header for this page, but kept the padding and bottom border.-->
+      <h2 class="text-center pb-2 border-bottom border-dark">Donate Today!</h2>
+
+      <!--As on the Progress page, I aligned the paragraph to the left and gave it a small margin.-->
+      <p class="text-left mx-2">We can only accept check and e-check. Use the form below, or send a check to our address 
+        at 120 Alder Street, Faren.
+      </p>
+
+      <!--I made the form using form-row and form-group tags for the basic construction. To provide better contrast, I
+      changed the background color. I used a smaller margin than I did with the paragraph to allow for a small amount of
+      internal padding so that the select boxes did not extend all the way to the edge of the background. I also added the
+      required trait to most of the form components, with an aria-required="true" tag for screen readers.-->
+      <form class="bg-info mx-1">
+        <div class="form-row px-1">
+          <!--For the first and last name, I wanted them to display on the same row, so I used an outer div class with a
+          div class for each input and label, setting the column size to medium so that they would only stack on small
+          screens and setting the number on each to 6 to ensure each took up half of the available space when side by side.-->
+          <div class="form-group col-md-6">
+            <label for="inputFirstName">First Name</label>
+            <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" required aria-required="true">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputLastName">Last Name</label>
+            <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" required aria-required="true">
+          </div>
+        </div>
+        <!--I did the same for the second row as for the first. To display the dollar sign and .00 before and after, I went
+        to the Bootstrap documentation. I created a dropdown menu using the select tag, placing the option I wanted as the
+        default at the top of the list.-->
+        <div class="form-row px-1">
+          <div class="form-group col-md-6">
+            <label for="paymentAmount">Donation Amount</label>
+            <div class="input-group" id="paymentAmount">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" required aria-required="true">
+              <div class="input-group-append">
+                <span class="input-group-text">.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="dropdownDonationTarget">I'm donating for:</label>
+            <select class="form-control" id="dropdownDonationTarget">
+              <option>Any project</option>
+              <option>Grand Ampitheatre</option>
+              <option>Xanshir Library</option>
+              <option>Matheneas Cathedral</option>
+              <option>Aali Oasis</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group col-md-8">
+          <label for="routingNumber">Bank Routing Number</label>
+          <input type="text" class="form-control" id="routingNumber" required aria-required="true">
+        </div>
+        <!--Ideally, the Confirm Account Number input would need to be identical to the first Account Number input.
+        On looking it up, it appears that this would be done using JavaScript, so I had to let it be for this project.-->
+        <div class="form-group col-md-8">
+          <label for="accountNumber">Account Number</label>
+          <input type="text" class="form-control" id="accountNumber" required aria-required="true">
+        </div>
+        <div class="form-group col-md-8">
+          <label for="confirmAccountNumber">Confirm Account Number</label>
+          <input type="text" class="form-control" id="confirmAccountNumber" required aria-required="true">
+        </div>
+        <!--I added a header as an overall label for the radio select choices.-->
+        <h6 class="px-2">Please select one:</h6>
+        <!--I used the Bootstrap documentation for the basic construction of the radio buttons. I then altered the
+        shared name and the ids to make them more clear in my code.-->
+        <div class="custom-control custom-radio mx-2">
+          <input type="radio" id="addName" name="nameForDonation" class="custom-control-input">
+          <label class="custom-control-label" for="addName">Add my name to the donor wall.</label>
+        </div>
+        <div class="custom-control custom-radio mx-2">
+          <input type="radio" id="makeAnonymous" name="nameForDonation" class="custom-control-input">
+          <label class="custom-control-label" for="makeAnonymous">Make my donation anonymous.</label>
+        </div>
+        <div class="custom-control custom-radio mx-2">
+          <input type="radio" id="otherName" name="nameForDonation" class="custom-control-input">
+          <label class="custom-control-label" for="otherName">I'm donating in someone else's name (enter below).</label>
+        </div>
+        <!--For the text area, I reduced its size by adding the column class. I used bottom margins on it and the submit
+        button to space the content out better.-->
+        <textarea class="form-control mx-2 mb-2 col-sm-3" aria-label="Enter honorary donor's name"></textarea>
+        <button type="submit" class="btn btn-secondary mx-2 mb-2">Donate</button>
+      </form>
+
+      <!--As there was no change needed, I copied and pasted the footer from the landing page.-->
+      <footer class="text-center bg-dark text-light mx-n3">We are a not-for-profit organization, and this content is 
+        created and maintained under a Creative Commons license.</footer>
     </main>  
    
     

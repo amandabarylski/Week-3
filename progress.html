@@ -25,7 +25,64 @@
       </nav>
 
     <main class="mx-3 mt-3 px-md-5 bg-secondary">
-        <h1 class="text-center pb-2 border-bottom border-dark">Current Progress</h1>
+      <!--I used the same classes for this header as I did on the landing page for consistency.-->
+      <h1 class="text-center pb-2 border-bottom border-dark">Current Progress</h1>
+
+      <!--Along with aligning the paragraph text to the left, I gave it side margins so that it was not right up against
+      the edge of the main section.-->
+      <p class="text-left mx-2">
+        Currently, we are working on stabilizing the Grand Ampitheatre in Kyrr to allow for visitors while maintaining
+        the historic architecture; transcribing and rebinding the books that suffered water damage when Xanshir Library 
+        in ElErien flooded earlier this year; repairing the stained glass in Matheneas Cathedral in Trian; and excavating
+        an unknown settlement buried in sand near Aali Oasis in collaboration with Amiira Royal University. See the table 
+        below for a summary of estimated costs, duration, and progress towards these projects. If one of them captures 
+        your interest and you are able to help support it, visit our donation page!
+      </p>
+
+      <!--I followed the table template laid out in the Bootstrap documentation. To prevent the table's minimum size from
+      being too wide for narrow screens, I had to reduce the content inside some of the cells, including writing "Cost" 
+      instead of "Estimated Cost" and abbreviating the prices. As the table was already oriented the way I wanted on the
+      page, I did not have to add any margins or padding.-->
+      <table class="table table-striped table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Project</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Progress</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Grand Ampitheatre</td>
+            <td>$1.6 mil</td>
+            <td>5 years</td>
+            <td>30%</td>
+          </tr>
+          <tr>
+            <td>Xanshir Library</td>
+            <td>$600 K</td>
+            <td>10 months</td>
+            <td>80%</td>
+          </tr>
+          <tr>
+            <td>Matheneas Cathedral</td>
+            <td>$50 K</td>
+            <td>6 months</td>
+            <td>75%</td>
+          </tr>
+          <tr>
+            <td>Aali Oasis</td>
+            <td>$850 K</td>
+            <td>2 years</td>
+            <td>10%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--As there was no change needed, I copied and pasted the footer from the landing page.-->
+      <footer class="text-center bg-dark text-light mx-n3">We are a not-for-profit organization, and this content is 
+        created and maintained under a Creative Commons license.</footer>
     </main>
     
 
